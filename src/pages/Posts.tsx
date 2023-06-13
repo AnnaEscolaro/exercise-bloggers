@@ -6,19 +6,18 @@ import { PostType } from '../types';
 import '../styles/Posts.css';
 
 export default function Posts() {
-  const userPosts: PostType[] = posts; // TODO: recebe os posts do usuário selecionado
   const params = useParams();
   const { id } = params;
+  const userPosts: PostType[] = posts.filter((post) => post.userId === Number(id)); // TODO: recebe os posts do usuário selecionado
 
   return (
     <div data-testid="posts-page">
       <Header />
       <h1>Posts</h1>
       <div className="posts-list">
-        {userPosts.filter((post) => post.id === Number(id))
-          .map((post) => (
-            <Post key={ post.id } postData={ post } />
-          ))}
+        {userPosts.map((post) => (
+          <Post key={ post.id } postData={ post } />
+        ))}
       </div>
     </div>
   );
