@@ -15,7 +15,7 @@ export default function User({ userData }: Props) {
         {userData.lastName}
       </p>
       <img src={ userData.image } alt={ `${userData.firstName} ${userData.lastName}` } />
-      <Link to={ `/posts/:${userData.id}` }>Posts</Link>
+      <Link to={ `/posts/${userData.id}` }>Posts</Link>
     </div>
   );
 }
