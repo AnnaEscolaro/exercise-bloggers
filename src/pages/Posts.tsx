@@ -1,3 +1,4 @@
+import { useParams } from 'react-router-dom';
 import Header from '../components/Header';
 import Post from '../components/Post';
 import { posts } from '../data';
@@ -6,6 +7,7 @@ import '../styles/Posts.css';
 
 export default function Posts() {
   const userPosts: PostType[] = []; // TODO: recebe os posts do usuário selecionado
+//   const { id } = useParams();
 
   return (
     <div data-testid="posts-page">
